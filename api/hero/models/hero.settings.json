@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heroes",
+  "info": {
+    "name": "Hero"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "main_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "view_type": {
+      "type": "enumeration",
+      "enum": [
+        "image_left",
+        "image_center",
+        "image_right"
+      ]
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}
